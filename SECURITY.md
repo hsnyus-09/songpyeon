@@ -1,11 +1,11 @@
 # Security Policy
 
-## 취약점 보고
+## Reporting vulnerabilities
 
-재현 방법과 영향 범위를 정리해 관리자에게 비공개로 알려 주세요. 비공개 연락 경로가 없으면 공개 이슈에는 영향 범위와 연락 방법만 남겨 주세요. 악용 가능한 입력이나 공격 코드는 공개하지 마세요.
+Privately contact the maintainers with reproduction steps and the scope of impact. If no private contact method is available, leave only the scope of impact and a way to contact you in a public issue. Do not disclose exploitable inputs or attack code publicly.
 
-## SVG 생성
+## SVG generation
 
-seed와 label은 길이와 XML 문자 유효성을 검사하며, SVG에 삽입되는 텍스트는 XML 이스케이프 처리합니다. 모양이나 텍스트 출력 경로를 추가할 때도 기존 검사를 거쳐야 합니다.
+Seed and label lengths and XML character validity are checked, and text inserted into the SVG is XML-escaped. Any new shape or text output path must also pass through the existing checks.
 
-라이브러리와 플레이그라운드는 서버 저장소, 계정, 분석 스크립트를 사용하지 않습니다.
+The library and playground do not use server-side storage, accounts, or analytics scripts.
