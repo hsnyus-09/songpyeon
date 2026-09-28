@@ -1,0 +1,60 @@
+{
+  "name": "songpyeon",
+  "version": "0.1.0",
+  "description": "Deterministic string-to-SVG songpyeon rice-cake avatar library and playground.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Chuseok project contributors",
+  "sideEffects": false,
+  "main": "./dist/library/songpyeon.cjs",
+  "module": "./dist/library/songpyeon.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/library/songpyeon.js",
+      "require": "./dist/library/songpyeon.cjs"
+    }
+  },
+  "files": [
+    "dist/library",
+    "dist/types",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "preview": "vite preview --config vite.demo.config.ts --host 127.0.0.1 --port 5173",
+    "prepack": "npm run build:lib",
+    "build": "npm run build:lib && npm run build:demo",
+    "build:lib": "vite build --config vite.lib.config.ts && tsc -p tsconfig.lib.json",
+    "build:demo": "vite build --config vite.demo.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build",
+    "pack:smoke": "node scripts/pack-smoke.mjs"
+  },
+  "keywords": [
+    "songpyeon",
+    "chuseok",
+    "svg",
+    "avatar",
+    "deterministic"
+  ],
+  "devDependencies": {
+    "@eslint/js": "9.36.0",
+    "@playwright/test": "^1.63.0",
+    "eslint": "9.36.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.44.1",
+    "vite": "8.3.1",
+    "vitest": "5.0.2"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}
